@@ -1,0 +1,38 @@
+<p onclick="add_record(1,100,this)">1</p>
+<p onclick="add_record(2,130,this)">2</p>
+<p onclick="add_record(3,200,this)">3</p>
+<p onclick="add_record(4,230,this)">4</p>
+
+<h1 id="forno">1</h1>
+<h1 id="foramount">2</h1>
+
+<style>
+	p{
+		background: lightgray;
+		width:20px;
+		height:20px;
+	}
+</style>
+
+<script>
+	seatno=[];
+	seatamount=[];
+	function add_record(no,amount,curele){
+		//alert(1);
+		//console.log(no);
+		//console.log(amount);
+		seatno.push(no);
+		seatamount.push(amount);
+		//console.log(seatno);
+		//console.log(seatamount);
+		finalno = seatno.join(",");
+		//console.log(finalno);
+		finalamt = eval(seatamount.join("+"));
+		//console.log(finalamt);
+		document.querySelector("#forno").innerHTML = finalno;
+		document.querySelector("#foramount").innerHTML = finalamt;
+		//console.log(curele);
+		//console.log(curele.style);
+		curele.style.background = "red";
+	}
+</script>
