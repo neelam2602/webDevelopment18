@@ -1,0 +1,14 @@
+<input type="text" id="txt" placeholder="12-2-2000">
+<input type="button" value="check" onclick="check_value()">
+<p id="msg">hello</p>
+
+<script>
+	function check_value(){
+		// /^()/-()/-()$/
+		reg_exp = /^([0]?[1-9]|[1][0-9]|[2][0-9]|[3][0-1])\-([0]?[1-9]|[1][0-2])\-([0-9]{4})$/;
+		data = document.querySelector("#txt").value;
+
+		document.querySelector("#msg").innerHTML = (reg_exp.test(data))?"valid":"Invalid";
+		
+	}
+	</script>

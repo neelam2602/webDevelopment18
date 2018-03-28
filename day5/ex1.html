@@ -1,0 +1,35 @@
+<input type="button" value="Check" onclick="check_value()">
+<p id="msg">hello</p>
+
+<input type="button" value="play" onclick="repeat_value()">
+<input type="button" value="pause" onclick="stop_value()">
+<p id="msg1">hello</p>
+
+<script>
+	function check_value(){
+		var rec = new Date();
+		//console.log(rec);
+		//console.log(rec.getHours());
+		//console.log(rec.getDay());
+		//console.log(rec.getDate());
+		//console.log(rec.getMonth());
+		//console.log(rec.getFullYear());
+
+		str = rec.getHours() + ":" + rec.getMinutes()+":"+rec.getSeconds();
+		//console.log(str);
+		document.querySelector("#msg").innerHTML = str;
+	}
+	function repeat_value(){
+		intData = setInterval(function(){
+			//alert(1);
+			var rec = new Date();
+			str = rec.getHours() + ":" + rec.getMinutes()+":"+rec.getSeconds();
+		document.querySelector("#msg1").innerHTML = str;
+		},1000);
+	}
+
+	function stop_value(){
+		clearInterval(intData);
+	}
+
+</script>

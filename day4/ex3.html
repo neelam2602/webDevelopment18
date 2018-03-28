@@ -1,0 +1,15 @@
+<input type="text" id="txt" placeholder="FRCP2812E">
+<input type="button" value="check" onclick="check_value()">
+<p id="msg">hello</p>
+
+<script>
+	function check_value(){
+		reg_exp = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+		data = document.querySelector("#txt").value;
+
+		result = data.toUpperCase();
+		//console.log(result);
+		document.querySelector("#msg").innerHTML = (reg_exp.test(result))?("valid"):("Invalid");
+		document.querySelector("#txt").value = result;
+	}
+	</script>
