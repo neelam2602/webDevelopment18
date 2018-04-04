@@ -1,0 +1,109 @@
+<div class="main">
+	<div class="box">
+		<span>
+			<input type="checkbox" class="chk">
+		</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</span>
+		<span><button class="del">Delete</button></span>
+	</div>
+	<div class="box">
+		<span>
+			<input type="checkbox" class="chk">
+		</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</span>
+		<span><button class="del">Delete</button></span>
+	</div>
+	<div class="box">
+		<span>
+			<input type="checkbox" class="chk">
+		</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</span>
+		<span><button class="del">Delete</button></span>
+	</div>
+	<div class="box">
+		<span>
+			<input type="checkbox" class="chk">
+		</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</span>
+		<span><button class="del">Delete</button></span>
+	</div>
+	<div class="box">
+		<span>
+			<input type="checkbox" class="chk">
+		</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</span>
+		<span><button class="del">Delete</button></span>
+	</div>
+	<div class="box">
+		<span>
+			<input type="checkbox" class="chk">
+		</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit
+		</span>
+		<span><button class="del">Delete</button></span>
+	</div>
+</div>
+<input type="checkbox" class="chkall">
+<button class="delall">Delete</button>
+<style>
+	.main{
+		border:1px solid;
+		width:600px;
+	}
+	.box{
+		border:1px solid green;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+</style>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".del").click(function(){
+			// alert(1);
+			result = confirm("Sure?")
+			// alert(result);
+			if(result == true){
+				$(this).parent().parent().fadeOut(1000);
+			}
+		});
+
+		$(".chkall").change(function(){
+			ans = $(this).is(":checked");
+			// alert(ans);
+			if(ans == true){
+				// $(".chk").attr("checked","checked");
+				$(".chk").prop("checked",true);
+			}
+			else{
+				// $(".chk").attr("checked",false);
+				$(".chk").prop("checked",false);
+			}
+		})
+
+		$(".delall").click(function(){
+			// alert(1);
+			$(".box").each(function(elePosition,element){
+				// console.log(elePosition);
+				// console.log(element);
+				ans = $(this).children("span").children(".chk").is(":checked");
+				// console.log(ans);
+				if(ans == true){
+					$(this).fadeOut(1000);
+				}
+			})
+		})
+	})
+</script>

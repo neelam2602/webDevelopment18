@@ -1,0 +1,18 @@
+<input type="text" id="txt" placeholder="Enter domain name">
+<input type="button" value="check" onclick="check_value()">
+<p id="msg">hello</p>
+
+<script>
+	function check_value(){
+		//yahoo.com
+		//yahoo.co.in
+		//99acres.com
+		//ask-to-solve.com
+
+		reg_exp = /^([a-z0-9][a-z0-9\-]{1,}[a-z0-9])\.([a-z]{2,})(\.[a-z]{2,})?$/;
+		data = document.querySelector("#txt").value;
+
+		document.querySelector("#msg").innerHTML = (reg_exp.test(data))?"valid":"Invalid";
+
+	}
+	</script>

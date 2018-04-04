@@ -1,0 +1,44 @@
+<ul>
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+	</ul>
+	<style>
+	ul{
+		border:1px solid;
+	}
+	li{
+		border: 1px solid lightblue;
+	}
+</style>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("li").click(function(){
+			// $(this).css("background","lightgray");
+			// $(this).next().css("background","lightgray");
+			// $(this).nextAll().css("background","lightgray");
+			// $(this).prevAll().css("background","lightgray");
+			// $(this).prev().css("background","lightgray");
+			// $(this).siblings().css("background","lightgray");
+			// $(this).parent().css("border","2px solid green");
+			$(this).parent().children("li:eq(2)").css("background","lightpink");
+		})
+	})
+</script>

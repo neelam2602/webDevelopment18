@@ -1,0 +1,31 @@
+<div class="banner">
+	<img src="banner1.jpg">
+	<img src="banner2.jpg">
+	<img src="banner3.jpg">
+</div>
+<style>
+	.banner{
+		width:1200px;
+		height: 400px;
+		background: lightgray;
+
+	}
+	img{
+		width:1200px;
+		height: 400px;
+		position: absolute;
+	}
+</style>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("img").hide();
+		$("img:first").show();
+
+		setInterval(function(){
+			// alert(1);
+			$("img:first").fadeOut(2000).next().fadeIn(2000).end().appendTo(".banner");
+		},3000)
+	})
+</script>
