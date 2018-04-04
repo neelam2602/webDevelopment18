@@ -1,0 +1,11 @@
+<input type="text" id="txt" placeholder="Enter email-id">
+<input type="button" value="check" onclick="check_value()">
+<p id="msg">hello</p>
+
+<script>
+	//emailId=(username)@(domainName)
+
+	reg_exp = /^([a-z0-9][a-z0-9_\.]{1,}[a-z0-9])@([a-z0-9][a-z0-9\-]{1,}[a-z0-9])\.([a-z]{2,})(\.[a-z]{2,})?$/;
+	data = document.querySelector("#txt").value;
+	document.querySelector("#msg").innerHTML = (reg_exp.test(data))?"valid":"Invalid";
+</script>

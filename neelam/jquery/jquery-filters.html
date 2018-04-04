@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<ul>
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+
+		<li>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</li>
+	</ul>
+	<button class="btn">click</button>
+	<style>
+	ul{
+		border:1px solid;
+	}
+	li{
+		border: 1px solid lightblue;
+	}
+</style>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".btn").click(function(){
+			// $("li").css("background","lightgray");
+			// $("li:first").css("background","lightgray");
+			// $("li").first().css("background","lightgray");
+			// $("li:last").css("background","lightgray");
+			// $("li").last().css("background","lightgray");
+			// $("li:eq(2)").css("background","lightgray");
+			// $("li").eq(2).css("background","lightgray");
+			// $("li:odd").css("background","lightgray");
+			// $("li:even").css("background","lightgray");
+			// $("li:not(:eq(2))").css("background","lightgray");
+			// $("li:gt(2)").css("background","lightgray");
+			$("li:lt(2)").css("background","lightgray");
+		})
+	})
+</script>
+
+</body>
+</html>

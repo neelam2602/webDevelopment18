@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="col-md-3">
+		<img src="1.jpg" class="img-responsive">
+	</div>
+	<div class="col-md-3">
+		<img src="2.jpg" class="img-responsive">
+	</div>
+	<div class="col-md-3">
+		<img src="3.jpg" class="img-responsive">
+	</div>
+	<div class="col-md-3">
+		<img src="4.jpg" class="img-responsive">
+	</div>
+</div>
+<style type="text/css">
+	.container{
+		border:1px solid;
+		width:1000px;
+		margin-left: auto;
+		margin-right: auto;
+		/*overflow:auto;*/
+	}
+	.container:after{
+		content: "";
+		display:block;
+		clear:both;
+	}
+	.col-md-3{
+		width:25%;
+		float:left;
+	}
+	.img-responsive{
+		width:100%;
+		height: auto;
+	}
+</style>

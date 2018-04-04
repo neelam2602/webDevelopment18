@@ -1,0 +1,23 @@
+<input type="text" id="txt" placeholder="Enter mobile number">
+<input type="button" value="check" onclick="check_value()">
+<p id="msg">hello</p>
+
+<script>
+	function check_value(){
+		//alert("test");
+		data = document.querySelector("#txt").value;
+		//alert(data);
+
+		reg_exp = /^[1-9][0-9]{9}$/
+
+		result = reg_exp.test(data);
+		//alert(result);
+		if(result == true){
+			document.querySelector("#msg").innerHTML = "Valid";
+		}
+		else
+		{
+			document.querySelector("#msg").innerHTML = "Invalid";
+		}
+	}
+	</script>

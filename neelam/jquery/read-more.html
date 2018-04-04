@@ -1,0 +1,56 @@
+<div class="article">
+<p class="para1">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	
+</p>
+<p class="para2">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<a href="#" class="link">Read More</a>
+</div>
+
+<div>
+	<a href="#" class="a1">A</a>
+	<a href="#" class="a2">A+</a>
+	<a href="#" class="a3">A++</a>
+	</div>
+	<style>
+		.article{
+			background: lightgray;
+			width:400px;
+		}
+	</style>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".para2").hide();
+			$(".link").click(function(){
+				ans = $(".para2").is(":visible");
+				// alert(ans);
+				if(ans == false){
+					$(".para2").slideDown();
+					$(this).text("Show Less");
+				}
+				else{
+					$(".para2").slideUp();
+					$(this).text("Read More");
+				}
+			});
+			$(".a1").click(function(){
+				$("p").css("font-size","18px");
+			})
+			$(".a2").click(function(){
+				$("p").css("font-size","20px");
+			})
+			$(".a3").click(function(){
+				$("p").css("font-size","22px")
+			})
+		})
+	</script>
