@@ -1,0 +1,23 @@
+body{font-family: 'Open Sans', sans-serif;}
+.btn{background: #FE980F;border:0;color:#ffffff;padding:6px 15px;
+	font-size:16px;margin:10px 0px;}
+	/*hover is pseudo class*/
+.btn:hover{background:#eeeeee;color:#000000;cursor:pointer;}
+.slider h1{margin:20px 0px;font-size:50px;}
+.slider h2, .slider p{margin:15px 0px;}
+.slider .col-md-6:first-child{padding-top:80px}
+
+.products .col-md-4 h2,.products .col-md-4 p{margin:10px 0px;}
+.products .col-md-4 p{color:#666666;}
+.products .col-md-4 h2{font-size: 25px}
+.products .col-md-4{margin:15px 0px;}
+
+.category{list-style:none;border:1px solid #eeeeee;margin-top: 20px;
+padding-left: 10px;padding-right: 10px}
+.category li{padding:7px 0px;}
+.category li a{text-decoration:none;color:#999999;text-transform:uppercase;
+	font-size:14px;letter-spacing:1px; }
+.products .col-md-3 h2{text-transform: uppercase;color:#FE980F;
+	margin-top: 20px; }
+.category li span{color:#999999;font-size: 14px}
+.banner{margin:20px 0;}
