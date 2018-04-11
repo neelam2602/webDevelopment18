@@ -21,3 +21,32 @@ padding-left: 10px;padding-right: 10px}
 	margin-top: 20px; }
 .category li span{color:#999999;font-size: 14px}
 .banner{margin:20px 0;}
+
+.logo{border-bottom:1px solid #fafafa ;padding: 15px 0;margin-bottom:15px}
+.logo .col-md-3{/*border:1px solid;*/padding-top: 15px }
+.country{width:48%;border:1px solid #cccccc;height:30px;}
+
+.login_links{list-style:none;overflow: auto;margin-top: 5px;float:right;}
+.login_links li{float:right;}
+.login_links li a{border:1px solid #fcfcfc;display: block;padding: 10px 10px;font-size: 14px;
+color:#666666;text-decoration: none;text-transform: capitalize;margin:0 5px;}
+.login_links li a:hover{background: #f8f8f8}
+
+.footer,.contact{background: rgb(240,240,233);}
+.service{list-style: none;margin: 20px 0}
+.service li{padding: 5px 0}
+.service li a{text-decoration:none;color:#666666;font-size: 15px}
+.service_head{font-size: 20px;color:#222222;font-weight:normal;text-transform:
+uppercase}
+.lower_footer{border-top:2px solid #f6f6f6;overflow:auto;margin-top: 30px;padding-top:
+30px}
+.lower_footer .col-md-3 p{margin:20px 0;color:#666666;font-size:14px;}
+.txt{height: 32px;background:#f9f9f9;border:1px solid #cccccc;padding-left:5px}
+
+.contact{padding: 0.8% 0;font-size: 14px;color:#666666;}
+.upper_footer{overflow: auto;padding:20px 0;color:#666666;font-size:15px}
+.upper_footer h2{text-transform:uppercase;}
+.upper_footer img{border:1px solid #cccccc;border-radius:10px}
+
+.price_img{position:absolute;left:20%;bottom: 0;z-index:2}
+.slider_img{position: relative;}
