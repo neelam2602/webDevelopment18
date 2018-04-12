@@ -50,3 +50,25 @@ uppercase}
 
 .price_img{position:absolute;left:20%;bottom: 0;z-index:2}
 .slider_img{position: relative;}
+
+.slide_box{background:#FE980F;position: absolute;left:15px;}
+.product_box{position:relative;overflow:hidden;}
+
+.blackbox{height:100%;width:100%;z-index: 10;background: rgba(0,0,0,0.5);position:
+fixed;left:0;top:0;}
+.modalbox{width:400px;height: 400px;background: rgba(255,255,255,1);position:fixed;
+z-index:11;left:50%;top:50%;margin-left:-200px;margin-top: -200px;
+border-radius:10px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+-o-border-radius:10px;
+-ms-border-radius:10px;
+box-shadow: 2px 3px 5px #aaaaaa;
+top:-410px;}
+
+.tab_class{border:1px solid;list-style:none;overflow:auto;background: #40403E;
+	margin:10px 0}
+.tab_class li{border-right:1px solid;padding:10px 20px;float:left;
+color:#aaaaaa;}
+.tab_class li:hover{background: #FE980F;color: #ffffff;cursor: pointer;}
+.tab_class_contents{border:1px solid #eeeeee;padding:10px;margin-bottom: 20px}
