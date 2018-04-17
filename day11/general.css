@@ -55,7 +55,7 @@ body{font-size:16px;font-family: arial;color:#000000;background:#ffffff}
 	.col-md-9{width:calc(75% - 30px);}
 	.col-md-10{width:calc(83.33% - 30px);}
 	.col-md-11{width:calc(91.66% - 30px);}
-	.col-md-1,.col-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,
+	.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,
 	.col-md-8,.col-md-9,.col-md-10,.col-md-11{
 		float: left;padding:0 15px;
 	}

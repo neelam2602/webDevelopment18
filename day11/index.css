@@ -72,3 +72,12 @@ top:-410px;}
 color:#aaaaaa;}
 .tab_class li:hover{background: #FE980F;color: #ffffff;cursor: pointer;}
 .tab_class_contents{border:1px solid #eeeeee;padding:10px;margin-bottom: 20px}
+.gallery{position: relative;}
+.circles{position: absolute;bottom: 20px;width:100%;z-index: 12;text-align: center;
+padding: 10px 0}
+.circles span{background: #f1f1f1;width: 30px;height: 30px;border-radius: 50%;
+display: inline-block;cursor: pointer;}
+.circles span:first-child{background: #c1c1c1}
+
+.left_arrow{width:64px;height:64px;position: absolute;left:5%;top:40%;cursor: pointer;}
+.right_arrow{width:64px;height:64px;position: absolute;right:5%;top:40%;cursor: pointer;}
