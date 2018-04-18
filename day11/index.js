@@ -88,19 +88,124 @@ $(document).ready(function(){
 
 	})
 	// console.log(slider_arr)
+	curpos = 0;
+	minpos = 0;
+	maxpos = $(".slider").length - 1;
 	$(".circles span").click(function(){
 		var pos = $(this).index();
+		curpos = pos;
+		// alert(pos)
 		// console.log(pos)
 		// console.log(slider_arr[pos])
 		$(".mainslide").animate({
 			"margin-left": -slider_arr[pos]+"px"
 		},1000);
 		$(".circles span").css("background","#f1f1f1")
-		$(this).css("background","#c1c1c1")
+		$(this).css("background","#c1c1c1");
 
+		if(curpos > 0){
+			$(".left_arrow").fadeIn();
+		}
+		else{
+			$(".left_arrow").fadeOut();
+
+		}
+		if(curpos<maxpos){
+			$(".right_arrow").fadeIn()
+		}
+		else{
+			$(".right_arrow").fadeOut()
+
+		}
+
+	})
+	$(".left_arrow").hide();
+	
+	$(".left_arrow").click(function(){
+		curpos--;
+		$(".mainslide").animate({
+			"margin-left": -slider_arr[curpos]+"px"
+		},1000);
+		if(curpos > 0){
+			$(".left_arrow").fadeIn();
+		}
+		else{
+			$(".left_arrow").fadeOut();
+
+		}
+		if(curpos<maxpos){
+			$(".right_arrow").fadeIn()
+		}
+		else{
+			$(".right_arrow").fadeOut()
+
+		}
+		$(".circles span").css("background","#f1f1f1")
+		$(".circles span:eq("+curpos+")").css("background","#c1c1c1");
+	})
+
+	$(".right_arrow").click(function(){
+		curpos++;
+		$(".mainslide").animate({
+			"margin-left": -slider_arr[curpos]+"px"
+		},1000);
+		if(curpos > 0){
+			$(".left_arrow").fadeIn();
+		}
+		else{
+			$(".left_arrow").fadeOut();
+
+		}
+		if(curpos<maxpos){
+			$(".right_arrow").fadeIn()
+		}
+		else{
+			$(".right_arrow").fadeOut()
+
+		}
+		$(".circles span").css("background","#f1f1f1")
+		$(".circles span:eq("+curpos+")").css("background","#c1c1c1");
 	})
 	
 	// slider examples
+	// tooltip
+	$(".searchbox").mousemove(function(mouseobj){
+		// console.log(mouseobj);
+		// console.log(mouseobj.pageX)
+		xpos = mouseobj.pageX;
+		ypos = mouseobj.pageY;
+		$(".tooltip").show();
+		$(".tooltip").css("left",xpos+20)
+		$(".tooltip").css("top",ypos+20)
+
+
+	})
+	$(".searchbox").mouseout(function(){
+		$(".tooltip").hide();
+
+	})
+	// tooltip
+
+	// flipEffect
+	fcover = Math.round($(".front_cover").width());
+	// alert(fcover);
+
+	$(".flip_box , .flip_box_parent").width($(".front_cover").width());
+	$(".flip_box , .flip_box_parent").height($(".front_cover").height());
+
+	$(".flip_box_parent").mouseenter(function(){
+		$(".flip_box").css({
+			"transform":"rotateY(0) perspective("+fcover+"px)",
+			"transition":"transform 2s"
+		})
+		$(".front_cover").css({
+			"transform":"rotateY(180deg) perspective("+fcover+"px)",
+			"transition":"transform 2s"
+		})
+	})
+	// flipEffect
+
+
 
 
 })

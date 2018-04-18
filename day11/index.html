@@ -181,13 +181,23 @@
 				<div class="slide_box"></div>
 			</div>
 			<div class="col-md-4 product_box">
-				<img src="images/home/product6.jpg" class="img-responsive" />
-				<h2 class="text-center"> <del>2500</del> 2000</h2>
-				<p class="text-center">Womens party wear</p>
-				<p class="text-center">
-					<button class="btn">Add to cart</button>
-				</p>
-				<div class="slide_box"></div>
+				<div class="flip_box_parent">
+					<div class="front_cover">
+						<img src="images/home/product6.jpg" class="img-responsive" />
+						<h2 class="text-center"> <del>2500</del> 2000</h2>
+						<p class="text-center">Womens party wear</p>
+						<p class="text-center">
+							<button class="btn">Add to cart</button>
+						</p>
+					</div>
+					<div class="flip_box">
+						<p class="text-center">
+							<button class="btn" style="background: #eee">
+								Add to cart
+							</button>
+						</p>
+					</div>
+				</div>
 			</div>
 			<h2 class="text-center">Related Products</h2>
 			<ul class="tab_class">
@@ -292,7 +302,7 @@
 				<div class="col-md-3">
 					<h2 class="service_head">about shopper</h2>
 					<p>
-						<input type="text" class="txt" placeholder="Search">
+						<input type="text" class="txt searchbox" placeholder="Search">
 						<button class="btn">Search</button>
 					</p>
 					<p>
@@ -308,6 +318,8 @@
 	<!-- modalbox -->
 	<div class="blackbox">Hello</div>
 	<div class="modalbox">Hello</div>
+
+	<div class="tooltip"></div>
 	<!-- modalbox -->
 
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
