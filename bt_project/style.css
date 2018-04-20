@@ -1,0 +1,7 @@
+@media (min-width: 992px){
+	.container{margin: 2% auto}
+	.container h2{padding-bottom: 2%}
+	.product_box h2{padding-bottom: 0}
+	.product_box p{padding-bottom: 2%}
+	.pro_img{margin-bottom: 13%}
+}
