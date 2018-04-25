@@ -1,0 +1,12 @@
+link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css",rel="stylesheet")
+h2 hello
+h2 #{data1}
+h2 #{data2}
+h2 #{data3}
+a(href="/home") addData
+table(class=table)
+	each val in data3
+		tr
+			td #{val.id}
+			td #{val.name}
+			td #{val.count}
