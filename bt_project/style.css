@@ -1,7 +1,63 @@
-@media (min-width: 992px){
+
+/*mattkersley.com/responsive*/
+@media screen and (min-width: 992px){
 	.container{margin: 2% auto}
 	.container h2{padding-bottom: 2%}
 	.product_box h2{padding-bottom: 0}
 	.product_box p{padding-bottom: 2%}
 	.pro_img{margin-bottom: 13%}
+
+
+	.menu{background: #fff}
+	.menu .container,.logo .container{margin-top: 0;margin-bottom: 0}
+	.menu .container nav{margin-bottom:0}
+	.navbar-default{background-color: #fff;border-color:#fff}
+
+	.logo{background:#000;color:#fff}
+	.logo .container .col-md-3{
+		padding-top: 1.6%;
+	}
+	.logo .container .col-md-3 button{
+		margin: 0 1%;
+	}
+	.logo .btn-default{
+		color:#fff;background:#050505;border:none;
+	}
+	.logo h2{letter-spacing: 1px;margin-bottom:0}
+}
+
+/*portraite mode*/
+/*upto 768px*/
+@media screen and (max-width:480px ){
+	/*body{border:3px solid red;}*/
+	.product_box h2,.fresh_products h2,.corners h2{
+		font-size: 130%
+	}
+	.product_box p{display: none}
+	.product_box .col-md-3,.corners .col-md-3,.fresh_products .col-md-3{
+		width:48%;/*border:1px solid;*/float:left;margin:2% 1%;padding:0;
+	}
+	.product_box .col-md-3 img,.corners .col-md-3 img,.fresh_products .col-md-3 img{
+		/*border:1px solid;*/width:100%;margin:6% 0;
+	}
+
+	.menu{background: #000}
+	.menu .container{margin-top: 0;margin-bottom: 0}
+	.menu .container nav{margin-bottom:0}
+	.navbar-default{background-color: #000;border-color:#000}
+
+}
+/*landscape mod*/
+@media screen and (min-width:481px) and (max-width:767px){
+
+	.product_box .col-md-3,.corners .col-md-3,.fresh_products .col-md-3{
+		width:48%;/*border:1px solid;*/float:left;margin:2% 1%;padding:0;
+	}
+	.product_box .col-md-3 img,.corners .col-md-3 img,.fresh_products .col-md-3 img{
+		/*border:1px solid;*/width:100%;margin:6% 0;
+	}
+	.menu{background: #000}
+	.menu .container{margin-top: 0;margin-bottom: 0}
+	.menu .container nav{margin-bottom:0}
+	.navbar-default{background-color: #000;border-color:#000}
 }
