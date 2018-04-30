@@ -1,5 +1,11 @@
 
 /*mattkersley.com/responsive*/
+
+.footer{background:#000;color: #fff}
+.footer ul{list-style: none;padding-left:0}
+.footer ul li{padding:1.5% 0;}
+.footer ul li a{font-size:85%;color:#666}
+.carousel-control.left ,.carousel-control.right{background: none !important}
 @media screen and (min-width: 992px){
 	.container{margin: 2% auto}
 	.container h2{padding-bottom: 2%}
@@ -24,6 +30,7 @@
 		color:#fff;background:#050505;border:none;
 	}
 	.logo h2{letter-spacing: 1px;margin-bottom:0}
+
 }
 
 /*portraite mode*/
@@ -46,6 +53,10 @@
 	.menu .container nav{margin-bottom:0}
 	.navbar-default{background-color: #000;border-color:#000}
 
+	.style_hub .item .col-xs-6:last-child{display:none}
+	.style_hub .item .col-xs-6:first-child{width:100%}
+	.banks .col-md-3{margin: 1% 0}
+
 }
 /*landscape mod*/
 @media screen and (min-width:481px) and (max-width:767px){
@@ -60,4 +71,7 @@
 	.menu .container{margin-top: 0;margin-bottom: 0}
 	.menu .container nav{margin-bottom:0}
 	.navbar-default{background-color: #000;border-color:#000}
+	.footer .col-xs-6{
+		float:none;width:33%;float:left
+	}
 }
