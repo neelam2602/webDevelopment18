@@ -1,0 +1,9 @@
+a(href="/form") addData
+table(class=table)
+	each val in data
+		tr
+			td #{val.name}
+			td #{val.age}
+			td
+				a(href="/delete/"+val._id) deleteData
+
