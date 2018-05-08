@@ -1,0 +1,10 @@
+<a href="/form">add data</a>
+<table>
+<% for(var i=0; i < data.length; i++) { %>
+   <tr>
+     <td><%= data[i].name %></td>
+     <td><%= data[i].age %></td>
+     <td><a href="/delete/<%= data[i]._id %>") >deleteData</a></td>
+   </tr>
+<% } %>
+</table>
