@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+var session = require('express-session')
 
 var Client = require('node-rest-client').Client;
 validate = require('express-validator')
@@ -8,10 +9,36 @@ validate = require('express-validator')
 var client = new Client();
 
 var app = express();
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge:60*60*24*10 }
+}))
+app.use(function(req,res,next){
+	req.connection.setNoDelay(true);
+	next();
+})
 app.use(validate());
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(function(req,res,next){
+	// console.log(req.url)
+	// console.log(req.session)
+	if(req.session && req.session.userName){
+		if(req.url == "/login"){
+			res.redirect('/')
+		}
+		else{next();}
+	}
+	else{
+		if(req.url == "/password"){
+			res.redirect('/')
+		}
+		else{next();}
+	
+	}
+})
 app.use('/public', express.static(__dirname + '/public'));
 let transporter = nodemailer.createTransport({
         host: 'mail.php-training.in',
@@ -57,6 +84,8 @@ app.post('/login_action',function(req,res){
 			if(!err){
 				// console.log(result)
 				if(result.length>0){
+					req.session.userName = emailId;
+					app.locals.userName = emailId;
 					res.send("ok")
 				}
 				else{
@@ -70,6 +99,48 @@ app.post('/login_action',function(req,res){
 	}
 
 	
+})
+app.post('/password_action',function(req,res){
+	// console.log(req.body)
+	if(req.body.curr_password == req.body.new_password){
+		res.send("new and current password should be different")
+	}
+	else if(req.body.new_password != req.body.con_new_password){
+		res.send("password mismatch")
+	}
+	else{
+		emailId = req.session.userName;
+		console.log(emailId)
+		db.get("user_info").find({"emailId":emailId},function(err,result){
+			if(!err){
+				// console.log(result)
+				if(req.body.curr_password != result[0].password){
+					res.send("current password invalid")
+				}else{
+					// db.person.update({"_id":userid},{$set:{"name":"new","mobile":"99"});
+					db.get("user_info").update({"emailId":emailId},{$set:{"password":req.body.new_password}})
+					res.send("passowrd updated")
+				}
+			}else{
+				console.log(err)
+			}
+		})
+	}
+	// res.send("success")
+})
+app.get('/logout',function(req,res){
+	req.session.destroy(function(err){
+		if(!err){
+			delete app.locals.userName;
+			res.redirect('/')
+		}
+		else{
+			console.log(err)
+		}
+	})
+})
+app.get('/password',function(req,res){
+	res.render('password')
 })
 app.post('/register_action',function(req,res){
 	// res.send("test")
@@ -114,14 +185,14 @@ app.post('/register_action',function(req,res){
 							res.send("user added")
 						}
 			});
-							let mailOptions = {
-				        from: '"vishal" <vishal@php-training.in>', // sender address
-				        to: req.body.emailId, // list of receivers
-				        subject: 'registration process', // Subject line
-				        text: 'Hello world?', // plain text body
-				        html: 'Validate yourself' // html body
-				   	 };
-				transporter.sendMail(mailOptions, (error, info) => {
+			let mailOptions = {
+		        from: '"vishal" <vishal@php-training.in>', // sender address
+		        to: req.body.emailId, // list of receivers
+		        subject: 'registration process', // Subject line
+		        text: 'Hello world?', // plain text body
+		        html: 'Validate yourself' // html body
+	   		};
+			transporter.sendMail(mailOptions, (error, info) => {
 		       	if (error) {
 		            return console.log(error);
 		        }
