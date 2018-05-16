@@ -13,8 +13,34 @@ $(document).ready(function(){
 		// alert("success")
 		$.post("/login_action",$("#login_action").serialize(),function(res){
 			// alert(res)
-			$(".err_div").html(res);
+			if(res == "ok"){
+				window.location.href = window.location.origin
+			}
+			else{
+				$(".err_div").html(res);
+			}
 
+		})
+	})
+	$(".btn_category").click(function(){
+		ans = $("#category_action").serialize();
+		// alert(ans)
+		$.post('/category_action',ans,function(res){
+			// alert(res);
+			$(".err_div").html(res)
+		})
+	})
+	$(".btn_brand").click(function(){
+		ans = $("#brand_action").serialize();
+		// alert(ans)
+		$.post('/brand_action',ans,function(res){
+			// alert(res);
+			$(".err_div").html(res)
+		})
+	})
+	$(".btn_update_action").click(function(){
+		$.post("/password_action",$("#password_action").serialize(),function(res){
+			// alert(res)
 		})
 	})
 })
