@@ -59,18 +59,19 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								
 								<%if (locals.userName) { %>
 									<li><a href="/logout"><i class="fa fa-lock"></i> Logout (<%= locals.userName%>)</a></li>
 									<li><a href="/password"><i class="fa fa-lock"></i> password</a></li>
+									<li><a href="/category"><i class="fa fa-shopping-cart"></i> Category</a></li>
+									<li><a href="/brand"><i class="fa fa-shopping-cart"></i> brand</a></li>
+									
 								<% } %>
 								<%if (!locals.userName) { %>
 									<li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
 								<% } %>
+
 							</ul>
 						</div>
 					</div>
