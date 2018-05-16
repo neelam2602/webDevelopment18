@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-var session = require('express-session')
+var session = require('express-session');
+var async = require('async');
 
 var Client = require('node-rest-client').Client;
 validate = require('express-validator')
@@ -142,6 +143,53 @@ app.get('/logout',function(req,res){
 app.get('/password',function(req,res){
 	res.render('password')
 })
+app.get('/category',function(req,res){
+	res.render('category')
+})
+app.get('/brand',function(req,res){
+	res.render('brand')
+})
+app.post('/category_action',function(req,res){
+	// res.render('category')
+	// console.log(req.body)
+	data = req.body;
+	category_name = req.body.category;
+	db.get("category").find({"category":category_name},function(err,result){
+		if(result.length>0){
+			res.send("category name already exist")
+		}
+		else{
+			db.get("category").insert(data,function(err,result){
+				if(!err){
+					res.send("ok")
+				}else{
+					console.log(err)
+				}
+			})
+		}
+	})
+})
+app.post('/brand_action',function(req,res){
+	// res.render('brand')
+	data = req.body;
+	brand_name = req.body.brand;
+
+	db.get("brand").find({"brand":brand_name},function(err,result){
+		if(result.length>0){
+			res.send("Brand name already exist")
+		}
+		else{
+			db.get("brand").insert(data,function(err,result){
+				if(!err){
+					res.send("ok")
+				}else{
+					console.log(err)
+				}
+			})
+		}
+	})
+	
+})
 app.post('/register_action',function(req,res){
 	// res.send("test")
 	// validation using express-validator
@@ -216,12 +264,27 @@ app.post('/register_action',function(req,res){
 })
 
 app.get('/',function(req,res){
-
-	db.get('brands').find({},function(err,result){
-		if(res){
-			res.render('index',{record:result});
-		}
-	})
+	
+	async.parallel({
+	    one: function(callback) {
+	        // callback(null, 'abc\n');
+	        db.get("brand").find({},function(err,result1){
+	        	callback(null, result1);
+	        })
+	    },
+	    two: function(callback) {
+	        // callback(null, 'xyz\n');
+	        db.get("category").find({},function(err,result2){
+	        	callback(null, result2);
+	        })
+	    }
+	}, function(err, results) {
+	    // results now equals to: results.one: 'abc\n', results.two: 'xyz\n'
+	    // console.log(results.one)
+	    // console.log(results.two)
+	    res.render('index',{r1:results.one,r2:results.two})
+	});
+	
 })
 
 
