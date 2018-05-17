@@ -5,23 +5,13 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear" class="category" for="<%= r2[i]._id%>">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											<%= r2[i].category %>
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Nike </a></li>
-											<li><a href="#">Under Armour </a></li>
-											<li><a href="#">Adidas </a></li>
-											<li><a href="#">Puma</a></li>
-											<li><a href="#">ASICS </a></li>
-										</ul>
-									</div>
-								</div>
+								
 							</div>
 							<% } %>
 						</div><!--/category-products-->
@@ -31,7 +21,7 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<% for(i=0;i<r1.length;i++) { %>
-									<li><a href="#"> <span class="pull-right">(56)</span><%= r1[i].brand %></a></li>
+									<li><a href="#" class="brand" for="<%= r1[i]._id %>"> <span class="pull-right">(56)</span><%= r1[i].brand %></a></li>
 									<% } %>
 									 
 								</ul>
