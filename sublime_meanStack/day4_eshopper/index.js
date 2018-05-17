@@ -129,6 +129,18 @@ app.post('/password_action',function(req,res){
 	}
 	// res.send("success")
 })
+app.post('/brand_filter',function(req,res){
+	// res.send(req.body.id)
+	db.get("product").find({"brand_id":req.body.id},function(err,result3){
+	    res.send(result3)
+	 })
+})
+app.post('/category_filter',function(req,res){
+	// res.send(req.body.id)
+	db.get("product").find({"category_id":req.body.id},function(err,result3){
+	    res.send(result3)
+	 })
+})
 app.get('/logout',function(req,res){
 	req.session.destroy(function(err){
 		if(!err){
@@ -277,12 +289,18 @@ app.get('/',function(req,res){
 	        db.get("category").find({},function(err,result2){
 	        	callback(null, result2);
 	        })
+	    },
+	    three:function(callback){
+	    	db.get("product").find({},function(err,result3){
+	    		callback(null,result3)
+	    	})
 	    }
 	}, function(err, results) {
 	    // results now equals to: results.one: 'abc\n', results.two: 'xyz\n'
 	    // console.log(results.one)
 	    // console.log(results.two)
-	    res.render('index',{r1:results.one,r2:results.two})
+
+	    res.render('index',{r1:results.one,r2:results.two,r3:results.three})
 	});
 	
 })

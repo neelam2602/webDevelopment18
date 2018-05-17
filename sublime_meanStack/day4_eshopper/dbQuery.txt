@@ -1,0 +1,11 @@
+db.product.insert({"name":"prd_01","price":890,"discount":70,"description":"hgg gg","path":"prd_01.jpg","category_id":"5afbf4db5e22be1b9409aa8c","brand_id":"5afbf6f6d3271c0bc0f140bc"})
+db.product.insert({"name":"prd_02","price":1000,"discount":50,"description":"hgg gghj jj","path":"prd_02.jpg","category_id":"5afbf4db5e22be1b9409aa8c","brand_id":"5afbf6f6d3271c0bc0f140bc"})
+db.product.insert({"name":"prd_03","price":1200,"discount":40,"description":"hgg gg ytyt","path":"prd_03.jpg","category_id":"5afbf4db5e22be1b9409aa8c","brand_id":"5afbf6f6d3271c0bc0f140bc"})
+
+
+db.category.update({{"_id":"5afbf4db5e22be1b9409aa8c"}},{$set:{"category":"mens"})
+db.person.update({"_id":""},{$set:{"name":"new","mobile":"99"});
+
+
+db.category.update({'category':'aaa'},{$set:{'category':'Mens'}})
+db.brand.update({'brand':'huuu'},{$set:{'brand':'Puma'}})
