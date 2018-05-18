@@ -141,6 +141,35 @@ app.post('/category_filter',function(req,res){
 	    res.send(result3)
 	 })
 })
+app.get('/product',function(req,res){
+	// res.render('product')
+	async.parallel({
+	    one: function(callback) {
+	        // callback(null, 'abc\n');
+	        db.get("brand").find({},function(err,result1){
+	        	callback(null, result1);
+	        })
+	    },
+	    two: function(callback) {
+	        // callback(null, 'xyz\n');
+	        db.get("category").find({},function(err,result2){
+	        	callback(null, result2);
+	        })
+	    }
+	    
+	}, function(err, results) {
+	    // results now equals to: results.one: 'abc\n', results.two: 'xyz\n'
+	    // console.log(results.one)
+	    // console.log(results.two)
+
+	    
+	    res.render('product',{r1:results.one,r2:results.two})
+	});
+})
+app.post('/product_action',function(req,res){
+	console.log(req.body)
+	res.send("ok")
+})
 app.get('/logout',function(req,res){
 	req.session.destroy(function(err){
 		if(!err){
@@ -301,6 +330,7 @@ app.get('/',function(req,res){
 	    // console.log(results.two)
 
 	    res.render('index',{r1:results.one,r2:results.two,r3:results.three})
+	    res.render('product',{r1:results.one,r2:results.two})
 	});
 	
 })
