@@ -61,6 +61,14 @@ $(document).ready(function(){
 			$(".err_div").html(res)
 		})
 	})
+	$(".btn_product").click(function(){
+		ans = $("#product_action").serialize();
+		// alert(ans)
+		$.post('/product_action',ans,function(res){
+			$(".err_div").html(res)
+		})
+
+	})
 	$(".btn_brand").click(function(){
 		ans = $("#brand_action").serialize();
 		// alert(ans)
