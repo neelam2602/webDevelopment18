@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="project">
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+
+	<script type="text/javascript">
+		// console.log(angular)
+		angular
+		.module("project",[])//[]-->third party controllers
+		.controller("brand",function(){
+			this.data = 100
+			this.data1=300
+		})
+		.controller("categories",function(){
+			this.data=200
+		})
+	</script>
+	
+</head>
+<body>
+	<div ng-controller="brand as obj1">
+		{{obj1.data}}
+		{{obj1.data1}}
+	</div>
+	<div ng-controller="categories as obj2">
+		{{obj2.data}}
+	</div>
+</body>
+</html>

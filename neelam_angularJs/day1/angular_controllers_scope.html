@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="project">
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+
+	<script type="text/javascript">
+		// console.log(angular)
+		angular
+		.module("project",[])
+		.run(function($rootScope){
+			$rootScope.common = 1200
+		})
+		.controller("brand",function($scope){
+			$scope.data = 100
+		})
+		.controller("categories",function($scope){
+			$scope.data=200
+		})
+	</script>
+	
+</head>
+<body>
+	<div ng-controller="brand">
+		{{data}}
+		{{common}}
+	</div>
+	<div ng-controller="categories">
+		{{data}}
+		{{common}}
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+	<p ng-init=" data1=10 ">
+		{{ 10+20+data1 }}
+	</p>
+
+	<p ng-init=" data1=90 ">
+		{{data1}}
+	</p>
+
+	<p ng-init="data2=[10,20,30]">
+		{{data2}}
+		<ul>
+			<li ng-repeat="ans in data2">
+				{{ans}}
+			</li>
+		</ul>
+		<ul>
+			<li ng-repeat="(key,ans) in data2">
+				{{key + "==" + ans}}
+			</li>
+		</ul>
+	</p>
+</body>
+</html>
