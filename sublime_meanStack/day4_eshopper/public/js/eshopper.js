@@ -62,11 +62,35 @@ $(document).ready(function(){
 		})
 	})
 	$(".btn_product").click(function(){
-		ans = $("#product_action").serialize();
+		// ans = $("#product_action").serialize();
 		// alert(ans)
-		$.post('/product_action',ans,function(res){
-			$(".err_div").html(res)
+		// $.post('/product_action',ans,function(res){
+		// 	$(".err_div").html(res)
+		// })
+		// $.ajax({
+		// 	type:"post",url:'/product_action',data:ans,
+		// 	success:function(res){
+		// 		$(".err_div").html(res)
+		// 	},
+		// 	error:function(res){
+		// 		console.log(res)
+		// 	}
+		// })
+		var record = document.getElementById("product_action")
+		// alert(record)
+		var rcd = new FormData(record)
+		// alert(rcd)
+		$.ajax({
+			type:"post",url:'/product_action',data:ans,
+			contentType:false,processData:false,
+			success:function(res){
+				$(".err_div").html(res)
+			},
+			error:function(res){
+				console.log(res)
+			}
 		})
+
 
 	})
 	$(".btn_brand").click(function(){
