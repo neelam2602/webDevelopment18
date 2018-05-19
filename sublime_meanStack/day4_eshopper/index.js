@@ -168,6 +168,8 @@ app.get('/product',function(req,res){
 })
 app.post('/product_action',function(req,res){
 	console.log(req.body)
+	console.log(req.file)
+
 	res.send("ok")
 })
 app.get('/logout',function(req,res){
